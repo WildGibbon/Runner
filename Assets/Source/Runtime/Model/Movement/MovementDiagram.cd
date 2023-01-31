@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Runner.Model.Movement.StepMovement" Collapsed="true">
+    <Position X="4.75" Y="5" Width="1.5" />
+    <AssociationLine Name="_data" Type="Runner.Model.Movement.StepMovementData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.5" Y="5.562" />
+        <Point X="5.5" Y="5.937" />
+        <Point X="6.75" Y="5.937" />
+        <Point X="6.75" Y="6.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="_view" Type="Runner.View.Movement.StepMovement.IMovementView" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.5" Y="5.562" />
+        <Point X="5.5" Y="5.937" />
+        <Point X="4.25" Y="5.937" />
+        <Point X="4.25" Y="6.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAEAABAAAAAAAAABAAAAIAAAAAAAAACAAAAAAAAg=</HashCode>
+      <FileName>Assets\Source\Runtime\Model\Movement\StepMovement\StepMovement.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_data" />
+      <Field Name="_view" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Runner.Model.Player.Player" Collapsed="true">
+    <Position X="6.25" Y="1" Width="1.5" />
+    <AssociationLine Name="_movement" Type="Runner.Model.Movement.IStepMovement" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7" Y="1.562" />
+        <Point X="7" Y="2.375" />
+        <Point X="5.5" Y="2.375" />
+        <Point X="5.5" Y="2.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="_input" Type="Runner.Input.IStepMovementInput" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7" Y="1.562" />
+        <Point X="7" Y="2.375" />
+        <Point X="8.5" Y="2.375" />
+        <Point X="8.5" Y="2.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAIAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Source\Runtime\Model\Player\Player.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_input" />
+      <Field Name="_movement" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Struct Name="Runner.Model.Movement.StepMovementData" Collapsed="true">
+    <Position X="6" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAgBAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Source\Runtime\Model\Movement\StepMovement\StepMovementData.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="Runner.View.Movement.StepMovement.IMovementView" Collapsed="true">
+    <Position X="3.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Source\Runtime\View\Movement\StepMovement\IMovementView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Runner.Input.IStepMovementInput" Collapsed="true">
+    <Position X="7.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Source\Runtime\Input\IStepMovementInput.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Runner.Model.Movement.IStepMovement" Collapsed="true">
+    <Position X="4.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Assets\Source\Runtime\Model\Movement\StepMovement\IStepMovement.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
