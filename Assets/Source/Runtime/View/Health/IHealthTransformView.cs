@@ -1,5 +1,6 @@
 using Runner.Model.Health;
-namespace FlappyBean.Runtime.View.Health
+
+namespace Runner.View.Health
 {
 	public interface IHealthTransformView
 	{

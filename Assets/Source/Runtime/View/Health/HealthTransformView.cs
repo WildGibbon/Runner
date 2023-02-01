@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-namespace FlappyBean.Runtime.View.Health
+namespace Runner.View.Health
 {
 	public class HealthTransformView : MonoBehaviour, IHealthTransformView
 	{
