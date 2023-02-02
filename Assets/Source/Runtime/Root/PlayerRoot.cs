@@ -4,7 +4,7 @@ using Runner.Root.SystemUpdates;
 using Runner.UI;
 using Runner.UI.Buttons;
 using Runner.View.Health;
-using Runner.View.Movement.StepMovement;
+using Runner.View.Movement;
 using Runner.View.Score;
 using UnityEngine;
 
