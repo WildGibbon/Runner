@@ -8,5 +8,6 @@ namespace Runner.Model.Enemy
 	public interface IEnemy
 	{
 		int ScoreUpValue { get; }
+		void Init(int scoreUpValue);
 	}
 }

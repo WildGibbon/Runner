@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Runner.View.Movement.StepMovement
+namespace Runner.View.Movement
 {
 	public interface IMovementView
 	{

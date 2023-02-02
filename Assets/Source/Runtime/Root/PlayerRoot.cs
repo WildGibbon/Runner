@@ -21,13 +21,14 @@ namespace Runner.Root
 		[SerializeField] private Vector2 _moveAxis;
 		[SerializeField] private IMovementView _movementView;
 		
-		private IScore _score;
 		private ISystemUpdate _systemUpdate;
+
+		public IScore Score { get; private set; }
 
 		public override void Compose()
 		{
 			_systemUpdate = new SystemUpdate();
-			_score = new Score(0, _scoreView);
+			Score = new Score(0, _scoreView);
 
 			var movementData = new StepMovementData(_stepLength, _moveSpeed, _moveAxis);
 			var movement = new StepMovement(transform.position, _movementView, movementData);

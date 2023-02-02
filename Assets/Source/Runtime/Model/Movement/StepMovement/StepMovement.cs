@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-using Runner.View.Movement.StepMovement;
+using Runner.View.Movement;
 
 namespace Runner.Model.Movement
 {

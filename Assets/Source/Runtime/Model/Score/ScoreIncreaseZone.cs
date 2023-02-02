@@ -5,6 +5,7 @@ using System.Text;
 using UnityEngine;
 using Runner.Model.Score;
 using Runner.Model.Player;
+using Runner.Model.Enemy;
 
 namespace Runner.Model.Score
 {

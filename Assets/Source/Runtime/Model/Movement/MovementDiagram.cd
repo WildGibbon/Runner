@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Runner.Model.Movement.StepMovement" Collapsed="true">
-    <Position X="3.5" Y="12" Width="1.5" />
+    <Position X="18.25" Y="12" Width="1.5" />
     <AssociationLine Name="_data" Type="Runner.Model.Movement.StepMovementData" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="4.25" Y="12.562" />
-        <Point X="4.25" Y="12.937" />
-        <Point X="5.5" Y="12.937" />
-        <Point X="5.5" Y="13.75" />
+        <Point X="19" Y="12.562" />
+        <Point X="19" Y="13.239" />
+        <Point X="20.25" Y="13.239" />
+        <Point X="20.25" Y="13.75" />
       </Path>
     </AssociationLine>
-    <AssociationLine Name="_view" Type="Runner.View.Movement.StepMovement.IMovementView" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+    <AssociationLine Name="_view" Type="Runner.View.Movement.IMovementView" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="4.25" Y="12.562" />
-        <Point X="4.25" Y="12.937" />
-        <Point X="3" Y="12.937" />
-        <Point X="3" Y="13.75" />
+        <Point X="19" Y="12.562" />
+        <Point X="19" Y="13.239" />
+        <Point X="17.75" Y="13.239" />
+        <Point X="17.75" Y="13.75" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -29,7 +29,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Runner.Model.Health.Health" Collapsed="true">
-    <Position X="7" Y="12" Width="1.5" />
+    <Position X="25.25" Y="12" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAIAAACAAAAAEAAAAAAAAAAAAAAggAAAAAA=</HashCode>
       <FileName>Assets\Source\Runtime\Model\Health\Health.cs</FileName>
@@ -37,7 +37,13 @@
     <Lollipop Position="0.107" />
   </Class>
   <Class Name="Runner.View.Health.HealthTransformView" Collapsed="true">
-    <Position X="7" Y="9.25" Width="1.5" />
+    <Position X="25.25" Y="9.25" Width="1.5" />
+    <AssociationLine Name="Health" Type="Runner.Model.Health.IHealth" FixedToPoint="true">
+      <Path>
+        <Point X="26" Y="9.941" />
+        <Point X="26" Y="11" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Assets\Source\Runtime\View\Health\HealthTransformView.cs</FileName>
@@ -48,15 +54,15 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Runner.Model.Attack.DefaultAttack" Collapsed="true">
-    <Position X="13.5" Y="12" Width="1.5" />
+    <Position X="12.5" Y="12" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Source\Runtime\Model\Attack\DefaultAttack.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="FlappyBean.Runtime.View.Attack.AttackTransformView" Collapsed="true">
-    <Position X="13.5" Y="9.25" Width="1.5" />
+  <Class Name="Runner.View.Attack.AttackTransformView" Collapsed="true">
+    <Position X="12.5" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAACAAAAAEA=</HashCode>
       <FileName>Assets\Source\Runtime\View\Attack\AttackTransformView.cs</FileName>
@@ -66,7 +72,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Runner.Model.Score.Score" Collapsed="true">
-    <Position X="10.25" Y="12" Width="1.5" />
+    <Position X="28.5" Y="12" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAEAAAAAAJAAAAAAAAAAAAAAAAAAAAACAgAAAAAAA=</HashCode>
       <FileName>Assets\Source\Runtime\Model\Score\Score.cs</FileName>
@@ -77,52 +83,68 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Runner.Root.CompositeRoot" Collapsed="true">
-    <Position X="10" Y="1.75" Width="1.5" />
+    <Position X="21.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Source\Runtime\Root\CompositeRoot.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Runner.Root.PlayerRoot" Collapsed="true">
-    <Position X="5.25" Y="4" Width="1.5" />
-    <AssociationLine Name="_nextStepButton" Type="Runner.UI.UnityButton" FixedFromPoint="true" FixedToPoint="true">
+    <Position X="25.25" Y="6" Width="1.5" />
+    <InheritanceLine Type="Runner.Root.CompositeRoot" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="6.062" Y="4.691" />
-        <Point X="6.062" Y="5.877" />
-        <Point X="4.312" Y="5.877" />
-        <Point X="4.312" Y="6.25" />
+        <Point X="22" Y="4.441" />
+        <Point X="22" Y="5.294" />
+        <Point X="26.062" Y="5.294" />
+        <Point X="26.062" Y="6" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="_health" Type="Runner.View.Health.IHealthTransformView" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="26" Y="6.691" />
+        <Point X="26" Y="7.471" />
+        <Point X="26" Y="7.471" />
+        <Point X="26" Y="8.25" />
       </Path>
     </AssociationLine>
-    <AssociationLine Name="_health" Type="Runner.View.Health.IHealthTransformView" ManuallyRouted="true">
+    <AssociationLine Name="_nextStepButton" Type="Runner.UI.UnityButton" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="6.062" Y="4.691" />
-        <Point X="6.062" Y="5.877" />
-        <Point X="7.75" Y="5.877" />
-        <Point X="7.75" Y="8.25" />
+        <Point X="26" Y="6.691" />
+        <Point X="26" Y="7.27" />
+        <Point X="22.75" Y="7.27" />
+        <Point X="22.75" Y="9.25" />
       </Path>
     </AssociationLine>
-    <AssociationLine Name="_score" Type="Runner.Model.Score.IScore" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+    <AssociationLine Name="Score" Type="Runner.Model.Score.IScore" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="6.062" Y="4.691" />
-        <Point X="6.062" Y="5.902" />
-        <Point X="9.278" Y="5.902" />
-        <Point X="9.278" Y="11.312" />
-        <Point X="10.25" Y="11.312" />
+        <Point X="26" Y="6.691" />
+        <Point X="26" Y="7.27" />
+        <Point X="29.25" Y="7.27" />
+        <Point X="29.25" Y="11" />
       </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.399" Y="-0.216" />
+      </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAQAAQEgEAEAAgAAAAgAAAAAAABAAAAAAAAIAAEABAA=</HashCode>
+      <HashCode>AAQAAQEgEAEAAAgAAAgAAAAAAABAAAAAAAAIAAEABAA=</HashCode>
       <FileName>Assets\Source\Runtime\Root\PlayerRoot.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="_health" />
       <Field Name="_nextStepButton" />
-      <Field Name="_score" />
+      <Property Name="Score" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Runner.Model.Score.ScoreIncreaseZone" Collapsed="true">
-    <Position X="10.25" Y="9.25" Width="1.5" />
-    <AssociationLine Name="_increasingScore" Type="Runner.Model.Score.IScore">
+    <Position X="30.75" Y="9.25" Width="1.5" />
+    <AssociationLine Name="_increasingScore" Type="Runner.Model.Score.IScore" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="31.5" Y="9.941" />
+        <Point X="31.5" Y="10.288" />
+        <Point X="29.25" Y="10.288" />
+        <Point X="29.25" Y="11" />
+      </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="-1.444" Y="0.236" />
       </MemberNameLabel>
@@ -136,7 +158,12 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Runner.UI.UnityButton" Collapsed="true">
-    <Position X="3.5" Y="6.25" Width="1.5" />
+    <Position X="22" Y="9.25" Width="1.5" />
+    <AssociationLine Name="_button" Type="Runner.UI.IButton">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.005" Y="-0.317" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAIAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Assets\Source\Runtime\UI\UnityButton.cs</FileName>
@@ -146,13 +173,13 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Runner.UI.Buttons.NextStepMoveButton" Collapsed="true">
-    <Position X="2.5" Y="9.25" Width="1.5" />
+    <Position X="22" Y="12" Width="1.5" />
     <AssociationLine Name="_stepMovement" Type="Runner.Model.Movement.IStepMovement" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="3.25" Y="9.812" />
-        <Point X="3.25" Y="10.172" />
-        <Point X="4.25" Y="10.172" />
-        <Point X="4.25" Y="11" />
+        <Point X="22" Y="12.312" />
+        <Point X="20.916" Y="12.312" />
+        <Point X="20.916" Y="11.375" />
+        <Point X="19.75" Y="11.375" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -164,96 +191,177 @@
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Runner.UI.Buttons.PreviousStepMoveButton" Collapsed="true">
-    <Position X="4.5" Y="9.25" Width="1.5" />
-    <AssociationLine Name="_stepMovement" Type="Runner.Model.Movement.IStepMovement" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="5.25" Y="9.812" />
-        <Point X="5.25" Y="10.172" />
-        <Point X="4.25" Y="10.172" />
-        <Point X="4.25" Y="11" />
-      </Path>
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="-1.364" Y="0.074" />
-      </MemberNameLabel>
-    </AssociationLine>
+  <Class Name="Runner.Root.ScoreIncreaseZoneRoot" Collapsed="true">
+    <Position X="30.75" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
-      <FileName>Assets\Source\Runtime\UI\Buttons\PreviousStepMoveButton.cs</FileName>
+      <HashCode>AIAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Assets\Source\Runtime\Root\ScoreIncreaseZoneRoot.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="_stepMovement" />
+      <Field Name="_increaseZone" />
+      <Field Name="_playerRoot" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Runner.Root.EnemyRoot" Collapsed="true">
+    <Position X="12.5" Y="6" Width="1.5" />
+    <AssociationLine Name="_attack" Type="Runner.View.Attack.AttackTransformView" ManuallyRouted="true">
+      <Path>
+        <Point X="13.25" Y="6.691" />
+        <Point X="13.25" Y="7.337" />
+        <Point X="13.25" Y="7.337" />
+        <Point X="13.25" Y="9.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="_enemy" Type="Runner.Model.Enemy.IEnemy" ManuallyRouted="true">
+      <Path>
+        <Point X="13.25" Y="6.691" />
+        <Point X="13.25" Y="7.314" />
+        <Point X="10" Y="7.314" />
+        <Point X="10" Y="11" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.014" Y="0.036" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="_movement" Type="Runner.Model.Movement.IDirectionalMovement" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13.25" Y="6.691" />
+        <Point X="13.25" Y="7.314" />
+        <Point X="16.25" Y="7.314" />
+        <Point X="16.25" Y="11" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAABAEAAAAgAAAAAAAQAAAABFAAAABAAIAAAAAEA=</HashCode>
+      <FileName>Assets\Source\Runtime\Root\EnemyRoot.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_attack" />
+      <Field Name="_enemy" />
+      <Field Name="_movement" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Runner.Model.Enemy.Enemy" Collapsed="true">
+    <Position X="9.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEEAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Assets\Source\Runtime\Model\Enemy\Enemy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Runner.Model.Movement.DirectionalMovement" Collapsed="true">
+    <Position X="15.5" Y="12" Width="1.5" />
+    <AssociationLine Name="_view" Type="Runner.View.Movement.IMovementView" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="16.25" Y="12.562" />
+        <Point X="16.25" Y="13.239" />
+        <Point X="17.75" Y="13.239" />
+        <Point X="17.75" Y="13.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.723" Y="0.07" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="_data" Type="Runner.Model.Movement.DirectionalMovementData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="16.25" Y="12.562" />
+        <Point X="16.25" Y="13.239" />
+        <Point X="15.062" Y="13.239" />
+        <Point X="15.062" Y="13.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAABAAAAAAAAAAAAAAAAAAAAgAAACAAAAAAAAA=</HashCode>
+      <FileName>Assets\Source\Runtime\Model\Movement\DirectionalMovement\DirectionalMovement.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_view" />
+      <Field Name="_data" />
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Struct Name="Runner.Model.Movement.StepMovementData" Collapsed="true">
-    <Position X="4.75" Y="13.75" Width="1.5" />
+    <Position X="19.5" Y="13.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAABAAAAAgBAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Source\Runtime\Model\Movement\StepMovement\StepMovementData.cs</FileName>
     </TypeIdentifier>
   </Struct>
-  <Interface Name="Runner.View.Movement.StepMovement.IMovementView" Collapsed="true">
-    <Position X="2.25" Y="13.75" Width="1.5" />
+  <Struct Name="Runner.Model.Movement.DirectionalMovementData" Collapsed="true">
+    <Position X="14.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Source\Runtime\Model\Movement\DirectionalMovement\DirectionalMovementData.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="Runner.View.Movement.IMovementView" Collapsed="true">
+    <Position X="17" Y="13.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Assets\Source\Runtime\View\Movement\StepMovement\IMovementView.cs</FileName>
+      <FileName>Assets\Source\Runtime\View\Movement\IMovementView.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Runner.Model.Health.IHealth" Collapsed="true">
-    <Position X="7" Y="11" Width="1.5" />
+    <Position X="25.25" Y="11" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAIAAACAAAAAEAAAAAAAAAAAAAAggAAAAAA=</HashCode>
       <FileName>Assets\Source\Runtime\Model\Health\IHealth.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Runner.Model.Movement.IStepMovement" Collapsed="true">
-    <Position X="3.5" Y="11" Width="1.5" />
+    <Position X="18.25" Y="11" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>Assets\Source\Runtime\Model\Movement\StepMovement\IStepMovement.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Runner.Model.Attack.IAttack" Collapsed="true">
-    <Position X="13.5" Y="11" Width="1.5" />
+    <Position X="12.5" Y="11" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Source\Runtime\Model\Attack\IAttack.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Runner.View.Health.IHealthTransformView" Collapsed="true">
-    <Position X="7" Y="8.25" Width="1.5" />
+    <Position X="25.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Assets\Source\Runtime\View\Health\IHealthTransformView.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Runner.Model.Enemy.IEnemy" Collapsed="true">
-    <Position X="16.75" Y="11" Width="1.5" />
+    <Position X="9.25" Y="11" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Assets\Source\Runtime\Model\Enemy\IEnemy.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Runner.Model.Score.IScore" Collapsed="true">
-    <Position X="10.25" Y="11" Width="1.5" />
+    <Position X="28.5" Y="11" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAEAAAAAAJAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>Assets\Source\Runtime\Model\Score\IScore.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Runner.View.Score.IScoreView" Collapsed="true">
-    <Position X="10.25" Y="13.75" Width="1.5" />
+    <Position X="28.5" Y="13.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Source\Runtime\View\Score\IScoreView.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Runner.UI.IButton" Collapsed="true">
-    <Position X="3.5" Y="8.25" Width="1.5" />
+    <Position X="22" Y="11" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>Assets\Source\Runtime\UI\IButton.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Runner.Model.Movement.IDirectionalMovement" Collapsed="true">
+    <Position X="15.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Source\Runtime\Model\Movement\DirectionalMovement\IDirectionalMovement.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

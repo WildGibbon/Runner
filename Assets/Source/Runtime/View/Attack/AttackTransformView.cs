@@ -3,7 +3,7 @@ using Runner.View.Health;
 using System;
 using UnityEngine;
 
-namespace FlappyBean.Runtime.View.Attack
+namespace Runner.View.Attack
 {
 	public class AttackTransformView : MonoBehaviour
 	{
