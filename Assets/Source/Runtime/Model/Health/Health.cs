@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace Runner.Model.Health
 {
@@ -8,42 +9,34 @@ namespace Runner.Model.Health
 		public int MaxValue { get; private set; }
 		public bool IsDead => Value <= 0;
 
-		public Health(int value)
+		public Health(int value, int maxValue)
 		{
 			if (value <= 0)
-			{
 				throw new ArgumentOutOfRangeException("Health value can not be less than 0");
-			}
 
-			MaxValue = Value = value;
+			MaxValue = maxValue;
+			Value = maxValue;
 		}
 
 		public void TakeDamage(int value)
 		{
 			if (IsDead)
-			{
 				throw new InvalidOperationException("Can not take damage to dead health");
-			}
 
 			if (value < 0)
-			{
 				throw new ArgumentOutOfRangeException("Damage can not be less than 0");
-			}
 
 			Value -= value;
+			Debug.Log("Damaged");
 		}
 
 		public void Heal(int count)
 		{
 			if (count < 0)
-			{
 				throw new ArgumentOutOfRangeException("Heal value can not be less than 0");
-			}
 
 			if (IsDead)
-			{
 				throw new InvalidOperationException("Can not heal dead health");
-			}
 
 			if (Value + count > MaxValue)
 			{
@@ -52,6 +45,7 @@ namespace Runner.Model.Health
 			}
 
 			Value += count;
+			Debug.Log("Heal");
 		}
 
 		public bool CanHeal(int count)

@@ -16,7 +16,7 @@ namespace Runner.View.Attack
 
 		private void OnTriggerEnter2D(Collider2D collision)
 		{
-			if (collision.TryGetComponent<IHealthTransformView>(out IHealthTransformView healthTransformView))
+			if (collision.TryGetComponent<IHealthTransformView>(out var healthTransformView))
 			{
 				_attack.Attack(healthTransformView.Health);	
 			}

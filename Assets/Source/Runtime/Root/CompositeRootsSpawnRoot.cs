@@ -7,13 +7,12 @@ using UnityEngine;
 
 namespace Runner.Root
 {
-	public class EnemySpawnRoot : CompositeRoot
+	public class CompositeRootsSpawnRoot : CompositeRoot
 	{
-		[SerializeField] private EnemyFactory _factory;
+		[SerializeField] private RootsFactory _factory;
 		[SerializeField] private int _timeBetweenSpawn;
-		[SerializeField] private List<Transform> _spawnPoints;
 
-		private SpawnCycle<EnemyRoot> _spawnCycle;
+		private SpawnCycle<CompositeRoot> _spawnCycle;
 		private ISystemUpdate _systemUpdate;
 
 		public override void Compose()
@@ -21,7 +20,7 @@ namespace Runner.Root
 			_systemUpdate = new SystemUpdate();
 
 			var timer = new Timer(_timeBetweenSpawn);
-			_spawnCycle = new SpawnCycle<EnemyRoot>(_factory, timer);
+			_spawnCycle = new SpawnCycle<CompositeRoot>(_factory, timer);
 
 			_systemUpdate.Add(timer, _spawnCycle);
 		}

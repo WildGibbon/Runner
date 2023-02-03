@@ -12,7 +12,7 @@ namespace FlappyBean.Tests.Health
 
 			try
 			{
-				var healthWithNegativeCount = new Runner.Model.Health.Health(-1);
+				var healthWithNegativeCount = new Runner.Model.Health.Health(-1, 1);
 			}
 
 			catch { errors++; }

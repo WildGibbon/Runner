@@ -3,18 +3,19 @@ using System;
 
 namespace Runner.UI.Buttons
 {
-	public class PreviousStepMoveButton : IButton
+	public class MoveNextStepButton : IButton
 	{
 		private IStepMovement _stepMovement;
 
-		public PreviousStepMoveButton(IStepMovement stepMovement)
+		public MoveNextStepButton(IStepMovement stepMovement)
 		{
 			_stepMovement = stepMovement ?? throw new ArgumentNullException(nameof(stepMovement));
 		}
 
 		public void Press()
 		{
-			_stepMovement.MovePreviousStep();
+			if(_stepMovement.CanMoveNextStep())
+				_stepMovement.MoveNextStep();
 		}
 	}
 }

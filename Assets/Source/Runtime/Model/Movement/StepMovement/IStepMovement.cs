@@ -6,5 +6,7 @@ namespace Runner.Model.Movement
 	{
 		void MoveNextStep();
 		void MovePreviousStep();
+		bool CanMoveNextStep();
+		bool CanMovePreviousStep();
 	}
 }

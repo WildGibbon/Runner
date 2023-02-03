@@ -10,7 +10,7 @@ namespace FlappyBean.Tests.Health
 		[SetUp]
 		public void Setup()
 		{
-			_health = new Runner.Model.Health.Health(100);
+			_health = new Runner.Model.Health.Health(100, 100);
 		}
 
 		[Test]
